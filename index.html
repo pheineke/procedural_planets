@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Import Map Example</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/",
+                "three/examples/": "https://unpkg.com/three@0.161.0/examples/",
+
+                "simplex": "https://unpkg.com/simplex-noise@3.0.1/dist/esm/simplex-noise.js",
+
+                "planet": "/planet.js",
+                "noisefilter": "/noisefilter.js"
+            }
+        }
+    </script>
+
+    <header>
+        <label for="radius" style="margin-right: 10px;">Radius:</label>
+        <input type="number" id="radius" min="1" max="1000" value="10" placeholder="Radius"
+            style="width: 200px; margin-right: 10px;">
+        <label for="resolution" style="margin-right: 10px;">Resolution:</label>
+        <input type="number" id="resolution" min="2" max="256" value="10" placeholder="Resolution"
+            style="width: 200px; margin-right: 10px;">
+
+        <label for="color" style="margin-right: 10px;">Color:</label>
+        <input type="color" id="color" value="#ff0000" style="width: 100px; margin-right: 10px;">
+    </header>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
